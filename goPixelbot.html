@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Drawing</title>
+    <style>
+        #canvas {
+            display: grid;
+            grid-template-columns: repeat(16, 20px);
+            grid-template-rows: repeat(16, 20px);
+        }
+        .pixel {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pixel Drawing</h1>
+    <div id="canvas"></div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+
+        // Створення 16x16 піксельної сітки
+        for (let i = 0; i < 256; i++) {
+            const pixel = document.createElement('div');
+            pixel.classList.add('pixel');
+            
+            // Додавання функції для малювання
+            pixel.addEventListener('click', () => {
+                pixel.style.backgroundColor = 'black';
+            });
+            
+            canvas.appendChild(pixel);
+        }
+    </script>
+</body>
+</html>
+
